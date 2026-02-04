@@ -21,7 +21,7 @@ const SubjectList = () => {
         {field:'department', operator:'eq' as const, value: selectedDepartment}
     ];
     const searchFilters= searchQuery ? [
-        {field:'department', operator:'contains' as const, value: searchQuery},
+        {field:'name', operator:'contains' as const, value: searchQuery},
     ] : [];
 
     const subjectTable=useTable<Subject>({
@@ -57,7 +57,7 @@ const SubjectList = () => {
                 size: 300,
                 header: () => <p className="column-title">Description</p>,
                 cell:({getValue}) => <span className="truncate
-                line-clammp-2">{getValue<string>()}</span>,
+                line-clamp-2">{getValue<string>()}</span>,
             }
         ],[]),
         refineCoreProps:{
