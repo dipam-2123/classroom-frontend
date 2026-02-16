@@ -43,6 +43,16 @@ const options: CreateDataProviderOptions={
                   if(field === 'department') params.department = value;
                   if(field === 'name' || field=== 'code') params.search = value;
               }
+              if (resource === 'classes') {
+                  // This maps 'search' from ClassesList.tsx to ?search= in the backend
+                  if (field === 'search' || field === 'name') params.search = value;
+
+                  // This maps 'subject' select to ?subject= in the backend
+                  if (field === 'subject') params.subject = value;
+
+                  // This maps 'teacher' select to ?teacher= in the backend
+                  if (field === 'teacher') params.teacher = value;
+              }
           })
 
           return params;
